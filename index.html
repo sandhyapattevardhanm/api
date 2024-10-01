@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Product Listing</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1512207724313-a4e675ec79ab?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-y: hidden;
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        #main-cont {
+            background-color: rgba(241, 209, 215, 0.9);
+            padding: 20px;
+            width: 600px;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            margin-top: 60px;
+            /* Prevent overlap with header */
+            scrollbar-width: none;
+            /* Firefox: Hide scrollbar */
+        }
+
+        #main-cont::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari: Hide scrollbar */
+        }
+
+        .product-card {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <svg class="w-6 h-6 text-gray-800 dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 7h.01m3.486 1.513h.01m-6.978 0h.01M6.99 12H7m9 4h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 3.043 12.89 9.1 9.1 0 0 0 8.2 20.1a8.62 8.62 0 0 0 3.769.9 2.013 2.013 0 0 0 2.03-2v-.857A2.036 2.036 0 0 1 16 16Z" />
+            </svg>
+
+            <p><b><i>SugarShack</i></b></p>
+        </div>
+        <div class="icons flex space-x-4">
+            <a href="#" class="text-gray-800">🛒 Cart</a>
+            <a href="#" class="text-gray-800">👤 Profile</a>
+        </div>
+    </header>
+
+    <section id="main-cont">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">Product List</h1>
+        <div id="products-list"></div> <!-- This is where product names will be displayed -->
+    </section>
+
+    <script src="script.js"></script> <!-- Link to your external JS file -->
+</body>
+
+</html>
